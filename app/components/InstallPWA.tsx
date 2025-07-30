@@ -35,7 +35,7 @@ export default function InstallPWA() {
       setPlatform('ios');
       // Check if it's Safari and not already installed
       const isSafari = /safari/.test(userAgent) && !/chrome/.test(userAgent);
-      if (isSafari && !window.navigator.standalone) {
+      if (isSafari && !(window.navigator as any).standalone) {
         setShowInstallPrompt(true);
       }
     } else if (isAndroid) {
