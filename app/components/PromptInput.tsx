@@ -32,7 +32,7 @@ export default function PromptInput({ onGenerate, isLoading = false }: PromptInp
   return (
     <form onSubmit={handleSubmit} className="w-full">
       <div className="space-y-4">
-        <div className="flex items-start justify-between gap-4">
+        <div className="flex flex-col sm:flex-row items-start sm:items-start justify-between gap-4">
           <CaptionLengthSelector 
             selectedLength={captionLength}
             onSelectLength={setCaptionLength}
@@ -43,14 +43,14 @@ export default function PromptInput({ onGenerate, isLoading = false }: PromptInp
           />
         </div>
         <div className="relative">
-          <div className="absolute left-4 top-4 text-[var(--neon-green)] pointer-events-none">
+          <div className="absolute left-3 sm:left-4 top-3 sm:top-4 text-[var(--neon-green)] pointer-events-none">
             <span className="blink">▸</span>
           </div>
           <textarea
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
           placeholder={placeholders[0]}
-          className="w-full pl-12 pr-4 py-4 min-h-[140px] bg-black/50 border-2 border-[var(--neon-green)] text-gray-100 placeholder-gray-600 resize-none focus:border-[var(--neon-blue)] focus:shadow-[var(--glow-blue)] transition-all duration-200 text-lg leading-relaxed rounded"
+          className="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 min-h-[120px] sm:min-h-[140px] bg-black/50 border-2 border-[var(--neon-green)] text-gray-100 placeholder-gray-600 resize-none focus:border-[var(--neon-blue)] focus:shadow-[var(--glow-blue)] transition-all duration-200 text-base sm:text-lg leading-relaxed rounded"
           disabled={isLoading}
           style={{ fontFamily: 'var(--font-vt323)' }}
         />
@@ -80,7 +80,7 @@ export default function PromptInput({ onGenerate, isLoading = false }: PromptInp
         </button>
         </div>
       </div>
-      <p className="mt-4 text-xs text-gray-500">
+      <p className="mt-4 text-[10px] sm:text-xs text-gray-500">
         [SYSTEM] Input video description for AI processing | Length: {captionLength.toUpperCase()} | Lang: {captionLanguage === 'vietnamese' ? 'VI' : 'EN'}
       </p>
     </form>

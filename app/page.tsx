@@ -126,7 +126,7 @@ export default function Home() {
             </section>
 
             <section className="retro-card border-[var(--vhs-purple)] border-opacity-50">
-              <h2 className="text-sm mb-6 neon-text-purple flex items-center">
+              <h2 className="text-xs sm:text-sm mb-3 sm:mb-6 neon-text-purple flex items-center">
                 <span className="mr-2">►</span> INPUT_PROMPT.BAT
               </h2>
               {selectedPlatform ? (
