@@ -11,6 +11,9 @@ declare global {
   interface WindowEventMap {
     beforeinstallprompt: BeforeInstallPromptEvent;
   }
+  interface Navigator {
+    standalone?: boolean;
+  }
 }
 
 export default function InstallPWA() {
@@ -35,7 +38,7 @@ export default function InstallPWA() {
       setPlatform('ios');
       // Check if it's Safari and not already installed
       const isSafari = /safari/.test(userAgent) && !/chrome/.test(userAgent);
-      if (isSafari && !(window.navigator as any).standalone) {
+      if (isSafari && !window.navigator.standalone) {
         setShowInstallPrompt(true);
       }
     } else if (isAndroid) {
