@@ -116,8 +116,8 @@ export default function InstallPWA() {
                 </p>
                 <ol className="text-[10px] sm:text-xs text-gray-400 space-y-0.5 sm:space-y-1" style={{ fontFamily: 'var(--font-vt323)' }}>
                   <li>1. Tap the share button <span className="text-[var(--neon-blue)]">⎋</span></li>
-                  <li>2. Scroll down and tap <span className="text-[var(--neon-green)]">"Add to Home Screen"</span></li>
-                  <li>3. Tap <span className="text-[var(--neon-pink)]">"Add"</span></li>
+                  <li>2. Scroll down and tap <span className="text-[var(--neon-green)]">&quot;Add to Home Screen&quot;</span></li>
+                  <li>3. Tap <span className="text-[var(--neon-pink)]">&quot;Add&quot;</span></li>
                 </ol>
               </div>
             ) : (

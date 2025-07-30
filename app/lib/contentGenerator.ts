@@ -68,7 +68,7 @@ export function generateContent(prompt: string, platform: Platform): GeneratedCo
 
   const hashtags = [
     ...platformHashtags.slice(0, 5),
-    ...generateContextualHashtags(prompt, platform)
+    ...generateContextualHashtags(prompt)
   ].slice(0, 10);
 
   const sounds = platformSounds
@@ -82,7 +82,7 @@ export function generateContent(prompt: string, platform: Platform): GeneratedCo
   };
 }
 
-function generateContextualHashtags(prompt: string, _platform: Platform): string[] {
+function generateContextualHashtags(prompt: string): string[] {
   const words = prompt.toLowerCase().split(' ');
   const contextHashtags: string[] = [];
   
