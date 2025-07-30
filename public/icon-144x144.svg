@@ -1,0 +1,6 @@
+<svg width="144" height="144" viewBox="0 0 144 144" xmlns="http://www.w3.org/2000/svg">
+    <rect width="144" height="144" fill="#0f0f0f"/>
+    <rect x="14.4" y="14.4" width="115.2" height="115.2" fill="#1a1a1a" stroke="#e665a0" stroke-width="2.88"/>
+    <text x="50%" y="40%" text-anchor="middle" font-family="monospace" font-size="21.599999999999998" fill="#4fb3d9" font-weight="bold">SOCIAL</text>
+    <text x="50%" y="60%" text-anchor="middle" font-family="monospace" font-size="21.599999999999998" fill="#64d86b" font-weight="bold">AI</text>
+  </svg>

@@ -1,0 +1,230 @@
+/* Retro Theme Variables */
+:root {
+  /* Muted Retro Colors */
+  --neon-blue: #4fb3d9;
+  --neon-pink: #e665a0;
+  --neon-green: #64d86b;
+  --vhs-purple: #9b59b6;
+  --dark-bg: #0f0f0f;
+  --dark-surface: #1a1a1a;
+  
+  /* Subtle Glow Effects */
+  --glow-blue: 0 0 10px rgba(79, 179, 217, 0.5);
+  --glow-pink: 0 0 10px rgba(230, 101, 160, 0.5);
+  --glow-green: 0 0 10px rgba(100, 216, 107, 0.5);
+  --glow-purple: 0 0 10px rgba(155, 89, 182, 0.5);
+  
+  /* Fonts */
+  --font-pixel: var(--font-press-start);
+  --font-retro: var(--font-vt323);
+}
+
+/* Scanline Effect */
+@keyframes scanline {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+.scanline::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.03);
+  animation: scanline 12s linear infinite;
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* CRT Monitor Effect */
+.crt-effect {
+  position: relative;
+  overflow: hidden;
+}
+
+.crt-effect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+  0%, 100% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+}
+
+.glitch {
+  animation: glitch 0.3s ease-in-out infinite;
+}
+
+.glitch-hover:hover {
+  animation: glitch 0.3s ease-in-out infinite;
+}
+
+/* Neon Text */
+.neon-text-blue {
+  color: var(--neon-blue);
+  text-shadow: 0 0 5px rgba(79, 179, 217, 0.3);
+}
+
+.neon-text-pink {
+  color: var(--neon-pink);
+  text-shadow: 0 0 5px rgba(230, 101, 160, 0.3);
+}
+
+.neon-text-green {
+  color: var(--neon-green);
+  text-shadow: 0 0 5px rgba(100, 216, 107, 0.3);
+}
+
+.neon-text-purple {
+  color: var(--vhs-purple);
+  text-shadow: 0 0 5px rgba(155, 89, 182, 0.3);
+}
+
+/* Retro Button */
+.retro-button {
+  position: relative;
+  background: var(--dark-surface);
+  border: 2px solid currentColor;
+  padding: 0.75rem 1.5rem;
+  font-family: var(--font-pixel);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.2s;
+  box-shadow: 4px 4px 0 0 currentColor;
+}
+
+.retro-button:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 0 currentColor;
+}
+
+.retro-button:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+/* Pixel Border */
+.pixel-border {
+  border: 4px solid;
+  border-image-slice: 4;
+  border-image-width: 4;
+  border-image-outset: 0;
+  border-image-source: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12'><rect x='0' y='0' width='4' height='4' fill='white'/><rect x='4' y='0' width='4' height='4' fill='transparent'/><rect x='8' y='0' width='4' height='4' fill='white'/><rect x='0' y='4' width='4' height='4' fill='transparent'/><rect x='8' y='4' width='4' height='4' fill='transparent'/><rect x='0' y='8' width='4' height='4' fill='white'/><rect x='4' y='8' width='4' height='4' fill='transparent'/><rect x='8' y='8' width='4' height='4' fill='white'/></svg>");
+  image-rendering: pixelated;
+}
+
+/* Flicker Animation */
+@keyframes flicker {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.flicker {
+  animation: flicker 0.1s ease-in-out infinite;
+}
+
+/* Retro Card */
+.retro-card {
+  background: rgba(26, 26, 26, 0.9);
+  border: 2px solid;
+  position: relative;
+  padding: 1.5rem;
+  backdrop-filter: blur(4px);
+}
+
+.retro-card::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: transparent;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* Blink Animation */
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.blink {
+  animation: blink 1s step-start infinite;
+}
+
+/* VHS Tracking Effect */
+@keyframes vhs-tracking {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 0 100%;
+  }
+}
+
+.vhs-effect {
+  position: relative;
+}
+
+.vhs-effect::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.03) 2px,
+    rgba(255, 255, 255, 0.03) 4px
+  );
+  animation: vhs-tracking 10s linear infinite;
+  pointer-events: none;
+}
